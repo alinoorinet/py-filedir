@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-path ="E:/Hck/GitLab/baki/Dos/Script/DirFileGet/filess"
+path = "G:/ican projects/کنترل تولید/مستندات"
 #we shall store all the file names in this list
 filelist = []
 
@@ -12,12 +12,12 @@ for root, dirs, files in os.walk(path):
 
 #print all the file names
 
-dest = "E:/Hck/GitLab/baki/Dos/Script/DirFileGet/target/"
+dest = "G:/GitHub/py-filedir/dest/"
 fileCounter = 0
 for name in filelist:
     filename, extension, = os.path.splitext(name)
     split_name = filename.split("\\")
-    newFile    = dest + split_name[2] + extension
+    newFile    = dest + split_name[1] + extension
     checkExistsTarget = Path(newFile[len(newFile) - len(extension):len(newFile)])
     if not checkExistsTarget.exists():
         file_to_open = Path(name)
